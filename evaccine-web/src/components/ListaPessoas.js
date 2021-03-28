@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Table} from "antd";
+import {Button, message, Table} from "antd";
 import PessoaDataService from "../services/PessoaDataService";
 
 const {Column} = Table;
@@ -28,6 +28,17 @@ export default class ListaPessoas extends Component {
             )
     }
 
+success = (record) => {
+        if (record.isVacinada) {
+            record.isVacinada = false;
+        } else {
+            record.isVacinada = true;
+        }
+
+        PessoaDataService.updatePessoa(record, record.codigo);
+        message.success('Status alterado com sucesso!');
+}
+
     render(){
         return(
             <div className="container">
@@ -42,7 +53,8 @@ export default class ListaPessoas extends Component {
                         <Column title="DATA DE NASCIMENTO" dataIndex="dataNascimento" key="dataNascimento"/>
                         <Column title="VACINADA" dataIndex="isVacinada" key="isVacinada"
                             render ={(text, record) => (<p>{String(record.isVacinada)}</p>)}/>
-                        <Column title="ATUALIZAR" key="atualizar"/>
+                        <Column title="ATUALIZAR" key="atualizar"
+                                render={(text, record) => (<Button type="primary" onClick={() => (this.success(record))}>Alterar status</Button>)}/>
                     </Table>
 
                 </div>

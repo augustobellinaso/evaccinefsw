@@ -17,7 +17,7 @@ export default function App() {
           </Header>
           <Content style={{padding: '0 50px'}}>
               <div className="site-layout-content">
-                <ListaPessoas></ListaPessoas>
+                <ListaPessoas/>
               </div>
 
           </Content>
