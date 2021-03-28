@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Table} from "antd";
+import PessoaDataService from "../services/PessoaDataService";
 
 const {Column} = Table;
 
@@ -11,6 +12,20 @@ export default class ListaPessoas extends Component {
             pessoas: [],
             message: null
         }
+    }
+
+    componentDidMount() {
+        this.refreshPessoas();
+    }
+
+    refreshPessoas(){
+        PessoaDataService.retrieveAllPessoas()
+            .then(
+                response => {
+                    console.log(response);
+                    this.setState({pessoas: response.data})
+                }
+            )
     }
 
     render(){
