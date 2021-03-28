@@ -40,7 +40,8 @@ export default class ListaPessoas extends Component {
                         <Column title="EMAIL" dataIndex="email" key="email"/>
                         <Column title="IDADE" dataIndex="idade" key="idade"/>
                         <Column title="DATA DE NASCIMENTO" dataIndex="dataNascimento" key="dataNascimento"/>
-                        <Column title="VACINADA" dataIndex="isVacinada" key="isVacinada"/>
+                        <Column title="VACINADA" dataIndex="isVacinada" key="isVacinada"
+                            render ={(text, record) => (<p>{String(record.isVacinada)}</p>)}/>
                         <Column title="ATUALIZAR" key="atualizar"/>
                     </Table>
 
