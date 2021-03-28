@@ -28,7 +28,7 @@ public class PessoaController {
         return pessoaRepository.save(pessoaCadastrada);
     }
 
-    @PutMapping
+    @PutMapping("/{codigo}")
     public Pessoa atualizarPessoa(@PathVariable("codigo") Long codigo, @RequestBody Pessoa pessoa) {
         return pessoaRepository.findById(codigo).map(
                 record -> {
