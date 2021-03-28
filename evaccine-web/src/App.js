@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {Layout, Menu, Breadcrumb} from 'antd';
+import "antd/dist/antd.css";
 
-function App() {
+const {Header, Content, Footer} = Layout;
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout className="layout">
+          <Header>
+              <div className="logo">
+                  <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                      <Menu.Item key="1">HOME</Menu.Item>
+                  </Menu>
+              </div>
+          </Header>
+          <Content style={{padding: '0 50px'}}>
+              <div className="site-layout-content">
+
+              </div>
+
+          </Content>
+          <Footer style={{textAlign: 'center'}}>
+              eVaccine - Fullstack Week <a href="https://larissafalcao.com.br/"> https://larissafalcao.com.br/</a>
+          </Footer>
+
+      </Layout>
     </div>
   );
 }
 
-export default App;
+
