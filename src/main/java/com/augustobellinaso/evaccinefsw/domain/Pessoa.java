@@ -4,10 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -30,6 +27,13 @@ public class Pessoa {
     private Integer idade;
 
     private String dataNascimento;
+
+    private Boolean isVacinada;
+
+    @ManyToOne
+    @JoinColumn(name = "codigo_grupo_prioritario")
+    private GruposPrioritarios grupo;
+
 
 
 }
