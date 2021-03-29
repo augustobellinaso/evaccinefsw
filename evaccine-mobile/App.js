@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, TextInput, Button} from 'react-native';
+import AppDataService from "./services/AppDataService";
 
 
 
@@ -13,6 +14,21 @@ export default function App() {
     const [idade, setIdade] = useState(0);
     const [dataNascimento, setDataNascimento] = useState('');
     const [grupo, setGrupo] = useState(null);
+
+    const handleAdd = event => {
+        const pessoa = {
+            nome: nome,
+            cpf: cpf,
+            telefone: telefone,
+            email: email,
+            idade: idade,
+            dataNascimento: dataNascimento,
+            grupo: {
+                codigo: grupo
+            }
+        };
+        AppDataService.cadastrarPessoa(pessoa);
+    }
 
 
   return (
@@ -54,7 +70,8 @@ export default function App() {
                    value={grupo}
                    placeholder="Grupo Prioritário" placeholderTextColor="#fff"/>
 
-        <Button title="CADASTRAR"/>
+        <Button title="CADASTRAR"
+                onPress={handleAdd}/>
         <StatusBar style="auto"/>
 
       </SafeAreaView>
