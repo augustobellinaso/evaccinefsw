@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, TextInput, Button} from 'react-native';
 
 
 
 export default function App() {
+
+    const [nome, setNome] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [email, setEmail] = useState('');
+    const [idade, setIdade] = useState(0);
+    const [dataNascimento, setDataNascimento] = useState('');
+    const [grupo, setGrupo] = useState(null);
+
+
   return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.title}>Cadastro eVaccine</Text>
