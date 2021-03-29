@@ -20,19 +20,40 @@ export default function App() {
         <Text style={styles.title}>Cadastro eVaccine</Text>
 
         <TextInput style={styles.input}
+                   onChangeText={setNome}
+                   value={nome}
                    placeholder="Nome" placeholderTextColor="#fff"/>
+
         <TextInput style={styles.input}
+                   onChangeText={setCpf}
+                   value={cpf}
                    placeholder="CPF" placeholderTextColor="#fff"/>
+
         <TextInput style={styles.input}
+                   onChangeText={setTelefone}
+                   value={telefone}
                    placeholder="Telefone" placeholderTextColor="#fff"/>
+
         <TextInput style={styles.input}
+                   onChangeText={setEmail}
+                   value={email}
                    placeholder="E-mail" placeholderTextColor="#fff"/>
+
         <TextInput style={styles.input}
+                   onChangeText={setIdade}
+                   value={idade}
                    placeholder="Idade" placeholderTextColor="#fff"/>
+
         <TextInput style={styles.input}
+                   onChangeText={setDataNascimento}
+                   value={dataNascimento}
                    placeholder="Data de Nascimento" placeholderTextColor="#fff"/>
+
         <TextInput style={styles.input}
+                   onChangeText={setGrupo}
+                   value={grupo}
                    placeholder="Grupo Prioritário" placeholderTextColor="#fff"/>
+
         <Button title="CADASTRAR"/>
         <StatusBar style="auto"/>
 
